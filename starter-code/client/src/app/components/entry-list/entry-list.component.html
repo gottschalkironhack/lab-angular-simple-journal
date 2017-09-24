@@ -1,0 +1,33 @@
+
+ 
+<div class="col">
+   <h1>List</h1>
+  <ul>
+    <li *ngFor="let item of list">
+      title: {{ item.title }}  date:  {{ item.date | date:'dd/MM/yyyy' }} <a [routerLink]="['/entries', item._id]">Details</a>  
+    </li>
+  </ul>
+</div>
+
+<div><button (click)="slideForm()">Add entry</button></div>
+
+<div id="formwrapper">
+
+  <form>
+
+    <input value="" name="date" placeholder="date">
+    <input value="" name="title" placeholder="title">
+    <input value="" name="content" placeholder="content">
+    <button type="submit">SEND</button>
+  </form>
+
+</div>
+  <!-- <ul>
+    
+    <li ng-repeat="(key, value) in list">  
+
+      {{ key }}{{ value }}
+    </li>
+  </ul> -->
+
+ 
