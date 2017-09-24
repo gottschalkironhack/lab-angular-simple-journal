@@ -21,21 +21,13 @@ export class EntriesService {
     .map(( res: Response ) => res.json() );
   }
   pushListDetail(formData){
-   
-    
-    console.log("formData", formData);
-    console.log("inside pushListDetail", formData);
-    
+      
     let options = new RequestOptions();
     options.headers = new Headers();
-    
-    //options.headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8;');
     options.headers.append('Content-Type', 'application/json');
-    //let myobj= {title: "first", content:"mycontent"};
     formData = JSON.stringify(formData);
     this.http.post('http://localhost:3000/api/journal-entries', formData, options)
-    .map(res => res.json()) // ...and calling .json() on the response to return data
-    
+    .map(res => res.json()) 
     .subscribe();
       
   }
