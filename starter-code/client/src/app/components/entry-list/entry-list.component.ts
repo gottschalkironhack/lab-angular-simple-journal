@@ -30,5 +30,9 @@ export class EntryListComponent implements OnInit {
         //  this.keysArr = Object.keys(myjson)
         });
     }
+    submitForm(formData){
+      console.log(formData);
+      this.theEntry.pushListDetail(formData);
+    }
 
   }

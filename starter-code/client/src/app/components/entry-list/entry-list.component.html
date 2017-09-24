@@ -13,11 +13,10 @@
 
 <div id="formwrapper">
 
-  <form>
-
-    <input value="" name="date" placeholder="date">
-    <input value="" name="title" placeholder="title">
-    <input value="" name="content" placeholder="content">
+  <form (ngSubmit)="submitForm(myForm.value)" #myForm="ngForm">
+    
+    <input ngModel name="title" placeholder="title">
+    <input ngModel name="content" placeholder="content">
     <button type="submit">SEND</button>
   </form>
 

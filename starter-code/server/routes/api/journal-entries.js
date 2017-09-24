@@ -20,10 +20,12 @@ router.get('/journal-entries/:id', (req, res, next) => {
 });
 
 router.post('/journal-entries', (req, res, next) => {
+  console.log("inside api");
   const newEntry = new Entry({
     title: req.body.title,
     content: req.body.content
   });
+
 
   newEntry.save( (err) => {
     if (err)             { return res.status(500).json(err) }
